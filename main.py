@@ -16,7 +16,7 @@ def set_temperature(tp):
         return 1.5
 
 
-st.title("Clone-Deepseek")
+st.title("✨Clone-Deepseek")
 with st.sidebar:
     open_api_key = st.text_input("请输入API密钥", type='password')
     st.markdown("[获取deepseek-API密钥](https://platform.deepseek.com/)")
@@ -32,14 +32,13 @@ with st.sidebar:
                   format_func=str,
                   help='更精准会更加严谨，比如在做计算题；更多样对话更具有创意')
     temperature = set_temperature(tp)
-    print(temperature)
     st.write("---")
     st.button("清空上下文开启新对话", on_click=clear_all)
 
 if "memory" not in st.session_state:
     st.session_state["memory"] = ConversationBufferMemory(return_messages=True)
     st.session_state["messages"] = [{"role": "ai",
-                                     "content": "你好，我是ai助手deepseek，有什么需要帮助的"}]
+                                     "content": "我是deepseek，有疑问尽管找我😁"}]
 
 for message in st.session_state["messages"]:
     st.chat_message(message["role"]).write(message["content"])
