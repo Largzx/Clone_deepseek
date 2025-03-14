@@ -1,0 +1,5 @@
+langchain~=0.2.17
+transformers~=4.46.3
+openai~=1.65.4
+streamlit~=1.40.1
+langchain_openai~=0.1.25
